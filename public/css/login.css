@@ -1,0 +1,59 @@
+.background {
+    background-color: #C9EDEDCC;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* padding-bottom: 5px; */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+/*sytle the input field*/
+.btn-primary {
+    background-color: #1B568E;
+    border-color: #4CAF50;
+    border-radius: 10px;
+    height: 43.80595779418945px;
+    width: 278.5px;
+    align-items: center;
+    text-align: center;
+    padding: auto;
+   
+    /* padding-top: 30%; */
+   
+/* border-radius: 10px; */
+padding: 12px 20px 12px 20px;
+
+    
+  }
+
+  .card-header {
+    text-align: center;
+    color: #FF8585;
+  }
+
+  .forgotpassword{
+    text-align: right;
+  }
+.login-btn{
+    text-align: center;
+}
+.card .form-group:last-child {
+    margin-top: 10px;
+}
+
+.a{
+  text-decoration: none;
+}
