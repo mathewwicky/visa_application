@@ -2,24 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\ApplicationFormController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', [CustomAuthController::class, 'login']);
+Route::middleware(['web'])->group(function () {
+    // Your routes here
+
+    Route::get('/login', [CustomAuthController::class, 'login']);
 Route::get('/registration', [CustomAuthController::class, 'registration']);
 Route::post('/register', [CustomAuthController::class, 'register'])->name('register');
 Route::post('/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
 Route::get('/dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('/logout', [CustomAuthController::class, 'logout']);
+//Route::get('/application', [ApplicationFormController::class, 'application']);
+//Route::post('/submit', [ApplicationFormController::class, 'submit'])->name('submit');
+Route::get('/application', [ApplicationFormController::class, 'application']);
+Route::post('/submit', [ApplicationFormController::class, 'submit'])->name('submit');
+});
+
