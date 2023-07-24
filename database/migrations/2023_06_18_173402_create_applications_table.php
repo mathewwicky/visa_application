@@ -15,6 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('Visa')->nullable();
             $table->string('Category')->nullable();
+            $table->string('Given_name')->nullable();
+            $table->string('SurName')->nullable();
+            $table->date('DateOfBirth')->nullable();
+            $table->string('Gender')->nullable();
+            $table->string('MartialStatus')->nullable();
+            $table->string('PhoneNumber')->nullable();
+            $table->string('Email')->nullable();
+            $table->string('ConfirmEmail')->nullable();
+            $table->string('CountryOfResidence')->nullable();
+            $table->string('CurrentResidenceAddress')->nullable();
+            
+        
             $table->timestamps();
         });
     }

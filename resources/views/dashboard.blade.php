@@ -31,11 +31,13 @@
    </div> -->
    <nav class="navbar">
   <div class="navbar-left">
-    <span>Welcome</span>
+    <span><img src="/images/log.png" alt="Logo"></span>
   </div>
   <div class="navbar-right">
     <!-- <a class="logout-button">Log Out</button> -->
-    <a  class="a" href="logout">Log out</a>
+    <button class="btn btn-primary" ><a  class="a" href="logout">Logout</a></button>
+
+    <!-- <a  class="a" href="logout">Log out</a> -->
   </div>
 </nav>
 <div class="dashboard-content">
