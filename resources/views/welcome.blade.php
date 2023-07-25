@@ -1,131 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visa Web App</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Basic styling, you can add more styles as needed */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WARE Visa Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Create a separate CSS file for custom styles -->
+    <style>
+        /* styles.css */
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-}
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
 
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
 
-nav ul li {
-  display: inline-block;
-  margin-left: 20px;
-}
+        /* Features Section */
+        .features {
+            padding: 50px 0;
+        }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-.hero {
-  background-color: #f9f9f9;
-  padding: 60px 0;
-  text-align: center;
-}
+        .features img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-.about-us {
-  padding: 40px 0;
-  background-color: #f0f0f0;
-}
+        .features h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
-.sign-in, .register {
-  padding: 40px 0;
-}
+        .features p {
+            font-size: 18px;
+        }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-}
+        /* Testimonials Section */
+        .testimonials {
+            padding: 50px 0;
+        }
 
-  </style>
+        .testimonials h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .testimonial blockquote {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .testimonial cite {
+            font-size: 18px;
+        }
+
+        /* Call to Action Section */
+        .call-to-action {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .call-to-action h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="container">
-      <a href="#" class="logo">Your Logo</a>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about-us">About Us</a></li>
-          <li><a href="#sign-in">Sign In</a></li>
-          <li><a href="#register">Register</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <h1>Welcome to Visa Web App</h1>
-      <p>Apply for your visa easily and efficiently with us!</p>
+        <a class="navbar-brand" href="#">WARE Visa Application</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Apply Now</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </section>
+</nav>
 
-  <!-- About Us Section -->
-  <section id="about-us" class="about-us">
+<!-- Hero Section -->
+<section class="hero">
     <div class="container">
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula in turpis hendrerit gravida. Curabitur ac risus in sapien bibendum scelerisque.</p>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1>WARE Visa Application</h1>
+                <p>Get your visa hassle-free with our WARE Visa Application. Apply now!</p>
+                <a href="{{ route('login') }}" class="btn btn-primary">Apply Now</a>
+            </div>
+            <div class="col-md-6">
+                <img src="images/visa1.jpg" alt="Visa Image 1">
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Sign In Section -->
-  <section id="sign-in" class="sign-in">
+<!-- Features Section -->
+<section class="features" id="features">
     <div class="container">
-      <h2>Sign In</h2>
-      <!-- Sign in form goes here -->
+        <h2>Key Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/visa2.jpg" alt="Visa Image 2">
+                <h3>Easy Application</h3>
+                <p>Our visa application process is simple and user-friendly.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/visa1.jpg" alt="Visa Image 1">
+                <h3>Fast Processing</h3>
+                <p>Get your visa processed quickly with our efficient system.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/visa2.jpg" alt="Visa Image 2">
+                <h3>Secure and Reliable</h3>
+                <p>Your data is safe with our secure and reliable application.</p>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Register Section -->
-  <section id="register" class="register">
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
     <div class="container">
-      <h2>Register</h2>
-      <!-- Registration form goes here -->
+        <h2>What Our Users Say</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <img src="images/user1.jpg" alt="User 1">
+                    <blockquote>"The WARE Visa Application made the visa process a breeze. Highly recommended!"</blockquote>
+                    <cite>- John Doe</cite>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <img src="images/user2.jpg" alt="User 2">
+                    <blockquote>"I got my visa within a few days. Thanks to WARE Visa Application!"</blockquote>
+                    <cite>- Jane Smith</cite>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <img src="images/user3.jpg" alt="User 3">
+                    <blockquote>"The best visa application platform I've used so far."</blockquote>
+                    <cite>- Michael Johnson</cite>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer Section -->
-  <footer>
+<!-- Call to Action Section -->
+<section class="call-to-action">
     <div class="container">
-      <p>&copy; 2023 Visa Web App. All rights reserved.</p>
+        <h2>Apply for Your Visa Today</h2>
+        <p>Get started with the WARE Visa Application now and experience a hassle-free visa process.</p>
+        <a href="{{ route('login') }}" class="btn btn-primary">Apply Now</a>
     </div>
-  </footer>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <p>&copy; <?php echo date('Y'); ?> WARE Visa Application. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

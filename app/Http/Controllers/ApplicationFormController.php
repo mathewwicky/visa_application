@@ -73,8 +73,11 @@ public function submitPersonalData(Request $request)
     // Save the complete application data to the database
     $application->save();
 
-    // Redirect to the success page or any other page as per your application flow
-    return redirect()->route('success')->with('success', 'Application submitted successfully.');
+    // // Redirect to the success page or any other page as per your application flow
+    // return redirect()->route('success')->with('success', 'Application submitted successfully.');
+
+    // Redirect to Step 3 (Passport Data) page
+    return redirect()->route('passport-application')->with('success', 'Personal Data submitted successfully.');
 }
 
 }

@@ -2,7 +2,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ApplicationFormController;
-use App\Http\Controllers\passport;
+use App\Http\Controllers\PassportController;
+use App\Http\Controllers\OtherDataController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,7 +12,7 @@ Route::get('/', function () {
 Route::middleware(['web'])->group(function () {
     // Your routes here
 
-    Route::get('/login', [CustomAuthController::class, 'login']);
+    Route::get('/login', [CustomAuthController::class, 'login'])->name('login');
     Route::get('/registration', [CustomAuthController::class, 'registration']);
     Route::post('/register', [CustomAuthController::class, 'register'])->name('register');
     Route::post('/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
@@ -25,4 +26,9 @@ Route::middleware(['web'])->group(function () {
     // Personal data form routes
     Route::get('/personal-data', [ApplicationFormController::class, 'personalDataForm'])->name('personal-data-form');
     Route::post('/submit-personal-data', [ApplicationFormController::class, 'submitPersonalData'])->name('submit-personal-data');
+
+    // Passport application routes
+    Route::get('/passport-application', [PassportController::class, 'application'])->name('passport-application');
+    Route::post('/submit-passport', [PassportController::class, 'submit'])->name('submit-passport');
+
 });
