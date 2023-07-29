@@ -44,6 +44,6 @@ class PassportController extends Controller
         $passportData->save();
 
         // Redirect to Step 3 (Passport Application) after successful submission
-        return redirect()->route('passport-application')->with('success', 'Passport Application submitted successfully.');
+        return redirect()->route('other-data-form')->with('success', 'Passport Application submitted successfully.');
     }
 }

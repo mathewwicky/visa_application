@@ -117,6 +117,8 @@
     </style>
 </head>
 <body>
+<img src="images/flag.png" width="100%" height="9px">
+
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -4,6 +4,8 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ApplicationFormController;
 use App\Http\Controllers\PassportController;
 use App\Http\Controllers\OtherDataController;
+use App\Http\Controllers\Step5DataController;
+use App\Http\Controllers\DocumentUploadController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,5 +32,22 @@ Route::middleware(['web'])->group(function () {
     // Passport application routes
     Route::get('/passport-application', [PassportController::class, 'application'])->name('passport-application');
     Route::post('/submit-passport', [PassportController::class, 'submit'])->name('submit-passport');
+
+    // Other Data form routes
+Route::get('/other-data', [OtherDataController::class, 'otherDataForm'])->name('other-data-form');
+Route::post('/submit-other-data', [OtherDataController::class, 'submitOtherData'])->name('submit-other-data');
+
+   // step5data routes
+   Route::get('/step5-data', [Step5DataController::class, 'index'])->name('step5-data');
+Route::post('/submit-step5-data', [Step5DataController::class, 'submitStep5Data'])->name('submit-step5-data');
+
+//alert message
+
+Route::get('/alert_message', [Step5DataController::class, 'alert_message'])->name('alert_message');
+
+
+//document upload form
+Route::get('/document-upload', [DocumentUploadController::class, 'documentUploadForm'])->name('document-upload-form');
+Route::post('/submit-document-upload', [DocumentUploadController::class, 'submitDocumentUpload'])->name('submit-document-upload');
 
 });

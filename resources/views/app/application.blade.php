@@ -31,8 +31,38 @@
 }
 
     </style>
+
+<script>
+    function show_visa_types() {
+      var visa_category = document.getElementById("visa_category").value;
+      var typeSelect = document.getElementById("visa_type");
+
+      // Reset options in the "type" select input
+      typeSelect.innerHTML = "";
+
+      // Add corresponding types based on the selected category
+      if (visa_category === "non-immigrant") {
+        typeSelect.innerHTML += `
+          <option value="Tourist Visa">Tourist Visa</option>
+          <option value="Business Visa">Business Visa</option>
+          <option value="Student Visa">Student Visa</option>
+          <option value="Work Visa">Work Visa</option>
+          <option value="Transit Visa">Transit Visa</option>
+        `;
+      } else if (visa_category === "immigrant") {
+        typeSelect.innerHTML += `
+          <option value="Family/Dependent Visa">Family/Dependent Visa</option>
+          <option value="Spousal/Partner Visa">Spousal/Partner Visa</option>
+          <option value="Refugee/Asylum Visa">Refugee/Asylum Visa</option>
+          <option value="Diplomatic/Official Visa">Diplomatic/Official Visa</option>
+        `;
+      }
+    }
+      </script>
+
 </head>
 <body>
+<img src="images/flag.png" width="100%" height="9px">
 <nav class="navbar">
     <div class="navbar-left">
         <span><img src="/images/log.png" alt="Logo"></span>
@@ -49,12 +79,14 @@
   <div class="step">Step 2</div>
   <div class="step">Step 3</div>
   <div class="step">Step 4</div>
+  <div class="step">Step 5</div>
+  <div class="step">Step 6</div>
 </div>
 <hr>
 </div>
 
 
-<h5 class="h5">Step 1 of 4: Application Visa type</h5>
+<h5 class="h5">Step 1 of 6: Application Visa type</h5>
 <h6>Select Visa type</h6>
 
 <form class="form-group" action="{{ route('submit') }}" method="POST">
@@ -63,33 +95,23 @@
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <label for="Visa" placeholder="*****">Visa</label>
-                    <select class="form-select" aria-label="Visa" name="Visa" required min="1">
-                        <option selected></option>
-                        <!-- Add your visa options here -->
-                        <option>Entry permit</option>
-                        <option>Student Visa</option>
-                        <option>Tourist Visa</option>
-                        <option>Conference Visa</option>
+                    <label for="Visa" placeholder="*****"><b>Visa<span style="color:red;">*</span></b></label>
+                    <select class="form-select" aria-label="Visa" name="Visa" required min="1" id="visa_category" onchange="show_visa_types()">
+                        <option value="" disabled selected>--select--</option>
+                        <option value="non-immigrant">Non-Immigrant Visas</option>
+                        <option value="immigrant">Immigrant Visas</option>
                     </select>
                 </div>
                 <div class="col">
-                    <label for="Category">Category</label>
-                    <select class="form-select" aria-label="Category" name="Category" required min="1">
-                        <option selected></option>
-                        <!-- Add your visa options here -->
-                        <option>3 months</option>
-                        <option>4 months</option>
-                        <option>6 months</option>
+                    <label for="Category"><b>Category<span style="color:red;">*</span></b></label>
+                    <select class="form-select" aria-label="Category" name="Category" required min="1" id="visa_type">
+                        <option value="" disabled selected>________________</option>
                     </select>
                 </div>
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Next</button>
-</form>
-<hr>
-<div>
+    <div>
     <p>Application Fee
         <span>USD 100</span>
     </p>
@@ -99,9 +121,13 @@
         and may be subjected to a surcharge fee
     </div>
 </div>
+    <br><br><br><br>
+    <button type="submit" class="btn btn-primary">Next</button>
+</form>
+<hr>
+
 
 <footer>
-    <hr>
     <p>Copyright &copy; 2023 - Uganda | Ware Visa Expert.&nbsp; All Rights Reserved&trade;</p>
 </footer>
 
